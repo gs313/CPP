@@ -6,16 +6,16 @@
 /*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 02:30:37 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/06 17:54:11 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:48:18 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat
 {
 	public:
@@ -38,7 +38,8 @@ class Bureaucrat
 			public:
 				virtual const char *what() const throw();
 		};
-		void	signForm(Form &form);
+		void	signForm(AForm &form);
+		void	executeForm(const AForm &form);
 	private:
 		const std::string _name;
 		int _grade;

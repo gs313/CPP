@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 02:30:40 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/06 17:50:03 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:48:39 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 	out << "Bureaucrat " << bureaucrat.getName() << " has grade " << bureaucrat.getGrade();
 	return (out);
 }
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	try
 	{
@@ -84,5 +84,18 @@ void	Bureaucrat::signForm(Form &form)
 	catch (std::exception &e)
 	{
 		std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(const AForm &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executes " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->getName() << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
