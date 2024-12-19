@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 02:30:35 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/10 22:10:41 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:38:08 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,25 @@ int main()
 	std::cout << "\n ------------------------------------------------------------\n" << std::endl;
 	std::cout << "Intern create a valid form " << std::endl;
 	Intern *a = new Intern();
-	Form *b =  a->makeForm("PresidentialPardonForm", "Clown");
-	
+	AForm *b =  a->makeForm("PresidentialPardonForm", "Clown");
+	std::cout << *b << std::endl;
+	Bureaucrat c("Bureaucrat", 1);
+	std::cout << c << std::endl;
+	c.signForm(*b);
+	c.executeForm(*b);
+	std::cout << *b << std::endl;
+
+	std::cout << "\n ------------------------------------------------------------\n" << std::endl;
+	std::cout << "Intern create a invalid form " << std::endl;
+	try
+	{
+		AForm *c =  a->makeForm("InvalidForm", "Clown");
+		std::cout << *c << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
 
 }

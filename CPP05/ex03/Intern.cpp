@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 21:21:24 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/10 21:59:03 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:33:58 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,12 @@ AForm *Intern::createShrubberyCreationForm(std::string target){
 }
 
 AForm *Intern::makeForm(std::string formName, std::string target) {
-    std::map<std::string, AForm* (Intern::*)(std::string)> formCreators = {
-        {"PresidentialPardonForm", &Intern::createPresidentialPardonForm},
-        {"RobotomyRequestForm", &Intern::createRobotomyRequestForm},
-        {"ShrubberyCreationForm", &Intern::createShrubberyCreationForm}
-    };
+    std::map<std::string, AForm* (Intern::*)(std::string)> formCreators;
+    formCreators.insert(std::make_pair("PresidentialPardonForm", &Intern::createPresidentialPardonForm));
+    formCreators.insert(std::make_pair("RobotomyRequestForm", &Intern::createRobotomyRequestForm));
+    formCreators.insert(std::make_pair("ShrubberyCreationForm", &Intern::createShrubberyCreationForm));
 
-    // Find the form creator in the map
-    auto it = formCreators.find(formName);
+    std::map<std::string, AForm* (Intern::*)(std::string)>::iterator it = formCreators.find(formName);
     if (it != formCreators.end()) {
         AForm *form = (this->*(it->second))(target);
         std::cout << "Intern creates " << *form << std::endl;
