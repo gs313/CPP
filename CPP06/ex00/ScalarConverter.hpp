@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
+/*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:32:30 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/24 20:03:16 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/24 23:54:19 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 # include <iostream>
+#include <string>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 class ScalarConverter
 {
