@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:47:57 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/24 23:54:47 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/25 20:25:13 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void ScalarConverter::convert(const std::string &str)
 {
 }
 
-bool caseSciNotation(std::string)
+bool caseSciNotation(std::string &str)
 {
 	if (str.compare("+inff") || str.compare("+inf"))
 	{
