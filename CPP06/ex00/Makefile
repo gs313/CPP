@@ -1,12 +1,12 @@
 NAME = ex00
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = Bureaucrat.hpp
+HEADER = ScalarConverter.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
