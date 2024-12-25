@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:32:30 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/24 23:54:19 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/25 21:21:56 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define SCALARCONVERTER_HPP
 # include <iostream>
 #include <string>
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <cmath>
+#include <string>
+#include <iomanip>
 
 class ScalarConverter
 {

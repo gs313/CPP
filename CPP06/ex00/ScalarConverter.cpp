@@ -6,12 +6,12 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:47:57 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/25 21:11:48 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/12/25 21:22:57 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-
+bool caseSciNotation(const std::string &str);
 ScalarConverter::ScalarConverter()
 {
 
@@ -22,12 +22,14 @@ ScalarConverter::~ScalarConverter()
 }
 ScalarConverter::ScalarConverter(const ScalarConverter &copy)
 {
-
+	*this = copy;
 }
 
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 {
-
+	if (this != &copy)
+		*this = copy;
+	return (*this);
 }
 
 void ScalarConverter::convert(const std::string &str)
@@ -48,13 +50,13 @@ void ScalarConverter::convert(const std::string &str)
 		std::cout << "char: " << _char << std::endl;
 	}
 	std::cout << "int: " << _int << std::endl;
-	std::cout << "float: " << _float << "f" << std::endl;
-	std::cout << "double: " << _double << std::endl;
+	std::cout << std::setprecision(1) << "float: " << _float << "f" << std::endl;
+	std::cout << std::setprecision(1) << "double: " << _double << std::endl;
 }
 
 bool caseSciNotation(const std::string &str)
 {
-	if (str.compare("+inff") || str.compare("+inf"))
+	if (!str.compare("+inff") || !str.compare("+inf"))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -63,7 +65,7 @@ bool caseSciNotation(const std::string &str)
 		return (true);
 	}
 
-	else if (str.compare("-inff") || str.compare("-inf"))
+	else if (!str.compare("-inff") || !str.compare("-inf"))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -72,7 +74,7 @@ bool caseSciNotation(const std::string &str)
 		return (true);
 	}
 
-	else if (str.compare("nanf"))
+	else if (!str.compare("nanf"))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
