@@ -6,12 +6,13 @@
 /*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 21:44:15 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/26 05:08:28 by scharuka         ###   ########.fr       */
+/*   Updated: 2025/01/01 06:08:31 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include "stdint.h"
 
 struct Data
 {
@@ -22,8 +23,8 @@ struct Data
 class Serializer
 {
 public:
-	static __intptr_t serialize(Data* ptr);
-	static Data* deserialize(__intptr_t raw);
+	static uintptr_t serialize(Data* ptr);
+	static Data* deserialize(uintptr_t raw);
 
 private:
 	Serializer();

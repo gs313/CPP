@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 21:44:18 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/26 05:08:07 by scharuka         ###   ########.fr       */
+/*   Updated: 2025/01/01 06:08:49 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ Serializer &Serializer::operator=(const Serializer &copy)
 		*this = copy;
 	return (*this);
 }
-__intptr_t Serializer::serialize(Data* ptr)
+uintptr_t Serializer::serialize(Data* ptr)
 {
 	if (!ptr)
 		return (0);
-	return (reinterpret_cast<__intptr_t>(ptr));
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
-Data* Serializer::deserialize(__intptr_t raw)
+Data* Serializer::deserialize(uintptr_t raw)
 {
 	if(!raw)
 		return (NULL);

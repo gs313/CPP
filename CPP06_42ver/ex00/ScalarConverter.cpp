@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:47:57 by scharuka          #+#    #+#             */
-/*   Updated: 2024/12/26 04:58:28 by scharuka         ###   ########.fr       */
+/*   Updated: 2025/01/01 03:44:39 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void ScalarConverter::convert(const std::string &str)
 	if (!caseNotNumber(str))
 	{
 		_double = std::strtod(str.c_str(), &pEnd);
-		printf("%p:%p | %lu \n", str.c_str(), pEnd, (unsigned long)pEnd);
 		_float = static_cast<float>(_double);
 		_int = static_cast<int>(_double);
 		_char = static_cast<char>(_double);
