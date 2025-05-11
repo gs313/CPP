@@ -1,12 +1,12 @@
 NAME = ex00
 
-SRC = main.cpp Base.cpp
+SRC = main.cpp
 
 CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = Base.hpp
+HEADER = whatever.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
