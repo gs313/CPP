@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 21:44:15 by scharuka          #+#    #+#             */
-/*   Updated: 2025/05/10 16:54:14 by scharuka         ###   ########.fr       */
+/*   Created: 2025/05/10 20:57:27 by scharuka          #+#    #+#             */
+/*   Updated: 2025/05/11 11:27:01 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
+
 #include <iostream>
 #include <string>
-#include "stdint.h"
 
-struct Data
+template <typename T>
+void swap(T &a, T &b)
 {
-	std::string s1;
-	int n;
-};
+	T temp = x;
+	x = y;
+	y = temp;
+}
 
-class Serializer
-{
-public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-
-private: 
-	Serializer();
-	Serializer(const Serializer &copy);
-	~Serializer();
-	Serializer &operator=(const Serializer &copy);
-};
+template <typename P>
+P min ()
+#endif
