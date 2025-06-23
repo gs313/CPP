@@ -113,6 +113,22 @@
     "unordered_map": "cpp",
     "variant": "cpp",
     "vector": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "bit": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "memory": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "type_traits": "cpp",
+    "utility": "cpp",
+    "numbers": "cpp",
+    "ranges": "cpp",
+    "span": "cpp"
   }
 }
