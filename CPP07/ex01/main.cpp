@@ -3,29 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:40:58 by scharuka          #+#    #+#             */
-/*   Updated: 2025/05/16 15:52:39 by scharuka         ###   ########.fr       */
+/*   Updated: 2025/06/23 16:27:54 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "iter.hpp"
 
-int main( void ) {
-	int arr[] = { 1, 2, 3, 4, 5 };
-	std::string strArr[] = { "Hello", "World", "!" };
+template <typename T>
+void printElement(const T& element) {
+    std::cout << element << " ";
+}
 
-	iter(arr, 5, [](int& n) { n *= 2; });
-	iter(strArr, 3, [](std::string& str) { str += "!"; });
+template <typename T>
+void incrementElement(T& element) {
+    element += 1;
+}
 
-	for (int i = 0; i < 5; ++i)
-		std::cout << arr[i] << " ";
-	std::cout << std::endl;
+int main() {
+    int intArray[] = {1, 2, 3, 4, 5};
+    size_t intArrayLength = sizeof(intArray) / sizeof(intArray[0]);
 
-	for (int i = 0; i < 3; ++i)
-		std::cout << strArr[i] << " ";
-	std::cout << std::endl;
+    std::cout << "Original int array: ";
+    iter(intArray, intArrayLength, printElement<int>);
+    std::cout << std::endl;
 
-	return 0;
-	}
+    iter(intArray, intArrayLength, incrementElement<int>);
+
+    std::cout << "After increment: ";
+    iter(intArray, intArrayLength, printElement<int>);
+    std::cout << std::endl;
+
+    const double doubleArray[] = {1.1, 2.2, 3.3, 4.4};
+    size_t doubleArrayLength = sizeof(doubleArray) / sizeof(doubleArray[0]);
+
+    std::cout << "Const double array: ";
+    iter(doubleArray, doubleArrayLength, printElement<double>);
+    std::cout << std::endl;
+
+
+    // iter(doubleArray, doubleArrayLength, incrementElement<double>);
+
+    return 0;
+}

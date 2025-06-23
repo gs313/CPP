@@ -6,7 +6,7 @@ CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = iter.hpp
+HEADER = Array.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
