@@ -12,13 +12,6 @@ void Span::addNumber(int number) {
 	_numbers.push_back(number);
 }
 
-template <typename Iterator>
-void Span::addRange(Iterator begin, Iterator end) {
-	if (std::distance(begin, end) + _numbers.size() > _maxSize) {
-		throw std::length_error("Span will exceed maximum size");
-	}
-	_numbers.insert(_numbers.end(), begin, end);
-}
 
 unsigned int Span::shortestSpan() const {
 	if (_numbers.size() < 2) {
