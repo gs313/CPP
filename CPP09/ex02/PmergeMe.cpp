@@ -63,7 +63,6 @@ void PmergeMe::sort_deque(std::deque<int>& deque) {
 }
 
 void PmergeMe::sortAndDisplay() {
-    // Display unsorted sequence
     std::cout << "Before : ";
     if(_vectorData.size() > 5)
     {
@@ -81,25 +80,22 @@ void PmergeMe::sortAndDisplay() {
     }
     std::cout << std::endl;
 
-    // Sort with vector and measure time
     std::vector<int> vectorCopy = _vectorData;
-    my_compare_count = 0; // Reset comparison count
+    my_compare_count = 0;
     double startTime = getTime();
     sort_vec(vectorCopy);
     double endTime = getTime();
     double vectorTime = endTime - startTime;
     // std::cout << "Comparisons made in vector: " << my_compare_count << std::endl;
 
-    // Sort with deque and measure time
     std::deque<int> dequeCopy = _dequeData;
-    my_compare_count = 0; // Reset comparison count
+    my_compare_count = 0;
     startTime = getTime();
     sort_deque(dequeCopy);
     endTime = getTime();
     double dequeTime = endTime - startTime;
     // std::cout << "Comparisons made in deque: " << my_compare_count << std::endl;
 
-    // Display sorted sequence
     std::cout << "After  : ";
     if(vectorCopy.size() > 5)
     {
@@ -118,7 +114,6 @@ void PmergeMe::sortAndDisplay() {
 
     std::cout << std::endl;
 
-    // Display timing information
     std::cout << "Time to process a range of " << _vectorData.size()
               << " elements with std::vector : " << std::fixed << vectorTime << " us" << std::endl;
     std::cout << "Time to process a range of " << _dequeData.size()

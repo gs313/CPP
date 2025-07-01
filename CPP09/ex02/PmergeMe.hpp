@@ -17,11 +17,9 @@ private:
     std::vector<int> _vectorData;
     std::deque<int> _dequeData;
 
-    // Ford-Johnson merge-insertion sort implementation
     template <typename T> void _merge_insertion_sort(T& container, int pair_level);
     template <typename T> void _swap_pair(typename T::iterator it, int pair_level);
 
-    // Utility functions
     bool isValidInput(const std::string& str);
     double getTime();
 
